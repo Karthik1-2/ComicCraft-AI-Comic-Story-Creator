@@ -196,4 +196,11 @@ The application supports the following test scenarios:
 - User authentication and community sharing gallery.
 
 ---
+## TEAM MEMBERS
+
+ - Dinesh Karthik N
+ - Ashwin Jayaseelan A
+ - Bharath KS
+ - Giridharan S
+ - Jaikumaran S
 
