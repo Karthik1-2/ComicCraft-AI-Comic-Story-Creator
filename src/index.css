@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #090d16;
+    color: #f1f5f9;
+  }
+}
+
+.font-bangers {
+  font-family: 'Bangers', cursive, system-ui;
+  letter-spacing: 0.06em;
+}
+
+.font-comic {
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Comic Book Styling Utilities */
+.comic-box {
+  border: 3px solid #000000;
+  box-shadow: 5px 5px 0px #000000;
+}
+
+.comic-box-sm {
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px #000000;
+}
+
+.comic-box-hover {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.comic-box-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #000000;
+}
+
+.comic-bubble-tail-bottom-left {
+  position: absolute;
+  bottom: -12px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 14px solid #ffffff;
+}
+
+.comic-bubble-tail-bottom-right {
+  position: absolute;
+  bottom: -12px;
+  right: 24px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 14px solid #ffffff;
+}
+
+.comic-bubble-tail-top-left {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 14px solid #ffffff;
+}
+
+.comic-bubble-tail-top-right {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 14px solid #ffffff;
+}
+
+.halftone-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+}
+
+.comic-dots-yellow {
+  background-image: radial-gradient(#eab308 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+}

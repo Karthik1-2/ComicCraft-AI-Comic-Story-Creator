@@ -1,0 +1,8 @@
+{
+  "name": "ComicCraft – AI Comic Story Creator",
+  "description": "Transform natural language story ideas into complete, multi-panel comic books using Google Gemini models with editable speech bubbles, AI story twists, and export capabilities.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
