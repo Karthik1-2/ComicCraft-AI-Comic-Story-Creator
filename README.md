@@ -110,27 +110,6 @@ EXPRESS BACKEND (server.ts)
 
 ---
 
-## Gemini Integration
-
-All Gemini SDK interactions are strictly executed on the server side in `server/services/geminiService.ts`:
-
-```typescript
-import { GoogleGenAI } from '@google/genai';
-
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY,
-  httpOptions: {
-    headers: {
-      'User-Agent': 'aistudio-build',
-    },
-  },
-});
-```
-
-API keys are never exposed to browser bundles or client code.
-
----
-
 ## Project Structure
 
 ```
@@ -181,95 +160,6 @@ API keys are never exposed to browser bundles or client code.
 
 ---
 
-## Installation
-
-Clone the repository and install dependencies:
-
-```bash
-npm install
-```
-
----
-
-## Environment Variables
-
-Copy `.env.example` to `.env`:
-
-```bash
-cp .env.example .env
-```
-
-Configure your variables:
-
-```env
-# Google Gemini API Key (Automatically injected in AI Studio)
-GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
-
-# Optional: MongoDB Connection URI (e.g. MongoDB Atlas or mongodb://localhost:27017/comiccraft)
-# If left empty, ComicCraft will use the built-in persistent storage (.data/comics.json)
-MONGODB_URI=""
-
-# Application Port
-PORT=3000
-```
-
----
-
-## MongoDB Setup
-
-1. Start your local MongoDB server:
-   ```bash
-   mongod --dbpath /path/to/data
-   ```
-2. Set your connection string in `.env`:
-   ```env
-   MONGODB_URI="mongodb://localhost:27017/comiccraft"
-   ```
-3. When ComicCraft starts, it automatically initializes the Mongoose connection and indexes.
-4. If no connection string is provided, ComicCraft will automatically run using its local JSON database without throwing connection errors.
-
----
-
-## Gemini API Setup
-
-1. Visit [Google AI Studio](https://aistudio.google.com/) to obtain an API key.
-2. In Google AI Studio, the key is automatically injected via the Secrets panel.
-3. For local execution, paste the key into your `.env` file under `GEMINI_API_KEY`.
-
----
-
-## Running Locally
-
-Start the full-stack development server:
-
-```bash
-npm run dev
-```
-
-Visit `http://localhost:3000` in your web browser.
-
----
-
-## API Documentation
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/api/comics/generate` | Generate full structured comic and panel artwork from a prompt |
-| `GET` | `/api/comics` | Retrieve all saved comics |
-| `POST` | `/api/comics` | Save a new comic to the database |
-| `GET` | `/api/comics/:id` | Retrieve a specific comic by ID |
-| `PUT` | `/api/comics/:id` | Update comic details, panels, or dialogue |
-| `DELETE` | `/api/comics/:id` | Delete a comic from the database |
-| `POST` | `/api/comics/:id/regenerate-panel/:panelNumber` | Regenerate only the selected panel's artwork |
-| `POST` | `/api/comics/:id/improve-dialogue/:panelNumber` | Use Gemini to improve dialogue for a specific panel |
-| `POST` | `/api/comics/:id/make-funnier` | Gemini rewrite injecting comedic timing and jokes |
-| `POST` | `/api/comics/:id/make-dramatic` | Gemini rewrite elevating dramatic tension |
-| `POST` | `/api/comics/:id/add-plot-twist` | Gemini injection of an unexpected plot twist |
-| `POST` | `/api/comics/:id/change-ending` | Gemini generation of an alternative ending panel |
-| `POST` | `/api/comics/:id/add-panel` | Gemini generation of a new chronological panel |
-| `GET` | `/api/health` | Health check endpoint |
-
----
 
 ## Testing
 
@@ -298,22 +188,6 @@ The application supports the following test scenarios:
 
 ---
 
-## Deployment
-
-Build the production bundle:
-
-```bash
-npm run build
-```
-
-Start the production server:
-
-```bash
-npm start
-```
-
----
-
 ## Future Enhancements
 
 - Multi-page comic books with chapter navigation.
@@ -323,13 +197,3 @@ npm start
 
 ---
 
-## Team Members
-
-- **Computer Science & Engineering Project Team**
-- College Capstone Development 2026
-
----
-
-## License
-
-Apache-2.0 License.
